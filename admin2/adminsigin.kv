@@ -1,0 +1,35 @@
+MDFloatLayout:
+    MDLabel:
+        text:"Login "
+        pos_hint:{"center_y":.75}
+        font_style:"H4"
+        halign:"center"
+        theme_text_color:"Custom"
+        text_color:0,0,1,1
+    MDLabel:
+        text:"Admin  Access"
+        pos_hint:{"center_y":.85}
+        font_style:"H4"
+        halign:"center"
+        theme_text_color:"Custom"
+        text_color:0,0,0,1
+    MDTextField:
+        id:email
+        hint_text:"Enter Your Email"
+        pos_hint:{"center_x":.5,"center_y":.6}
+        current_hint_text_color:0,0,1,1
+        size_hint_x:.8
+    MDTextField:
+        id:password
+        hint_text:"Password"
+        pos_hint:{"center_x":.5,"center_y":.45}
+        current_hint_text_color:0,0,1,1
+        size_hint_x:.8
+        password:True
+    MDRaisedButton:
+        text:"Log In"
+        pos_hint:{"center_x":.5,"center_y":.35}
+        size_hint_x:.5
+        on_release:app.verify(email.text,password.text)
+        theme_text_color:"Custom"
+        text_color:0,0,0,1

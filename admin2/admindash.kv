@@ -1,0 +1,92 @@
+Screen:
+    MDBoxLayout:
+        orientation: "vertical"
+
+        MDToolbar:
+            title: "ADMINISTRATOR DASHBOARD"
+        MDTabs:
+            Tab:
+                title:"Home"
+                MDLabel:
+                    id: home
+                    text: "Home Screen Here"
+                    halign: "center"
+
+
+
+            Tab:
+                title:"Database"
+                MDLabel:
+                    id: database
+                    text: "Databases"
+                    halign: "center"
+                MDBoxLayout:
+                    id:table_box
+                    pos_hint:{"center_x":5,"top":.8}
+                    size_hint:.9,.6
+                MDRectangleFlatButton:
+                    text:"Find Data From DataBase"
+                    pos_hint:{"center_x":.5,"center_y":.2}
+                    on_press:app.databaseHealthRecorde(database.text)
+            Tab:
+                title:"Location"
+                MDLabel:
+                    id: location
+                    text:"Locate The Patient"
+                    pos_hint:{"center_y":.85}
+                    font_style:"H4"
+                    halign:"center"
+                    font_size:'18sp'
+                    cursor_color:0,0,0,1
+                    theme_text_color:"Custom"
+                    text_color:0,0,0,1
+                MDTextField:
+                    id:url
+                    hint_text:"Enter URL of the Location:"
+                    pos_hint:{"center_x":.5,"center_y":.6}
+                    current_hint_text_color:0,0,1,1
+                    size_hint_x:.8
+
+                MDRectangleFlatButton:
+                    id:location
+                    text:"Find The place"
+                    pos_hint:{"center_x":.5,"center_y":.35}
+                    size_hint_x:.5
+                    theme_text_color:"Custom"
+                    text_color:0,0,0,1
+                    on_press:app.findLocation(location.text)
+            Tab:
+                title:"Register"
+                MDLabel:
+                    id: register
+                    text: "Location"
+                    halign: "center"
+                MDRectangleFlatButton:
+                    text:"Retrieve Registered Users"
+                    pos_hint:{"center_x":.5,"center_y":.2}
+                    on_press:app.registered(register.text)
+            Tab:
+                title:"About Us"
+                MDLabel:
+                    id: about-us
+                    text: """ This is a legal system used This is a legal system used in common law countries where two advocates represent their  of the patients in common  obligated to disclose to the court."""
+                    halign: "center"
+            Tab:
+                title:"Comments"
+                MDLabel:
+                    id: comments
+                    text: "Comments From The User"
+                    halign: "center"
+            Tab:
+                title:"Emergency"
+                MDLabel:
+                    id: emergency
+                    text: "Comments From The User"
+                    halign: "center"
+                MDRectangleFlatButton:
+                    text:"Retrieve emergency"
+                    pos_hint:{"center_x":.5,"center_y":.2}
+                    on_press:app.emergencies(emergency.text)
+
+
+
